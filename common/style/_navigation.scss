@@ -1,0 +1,19 @@
+.nav_menu {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 10px solid $accent;
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    justify-content: space-evenly;
+    list-style: none;
+  }
+
+  &__link {
+    font-family: BodyFontBold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $menu_text;
+  }
+}
