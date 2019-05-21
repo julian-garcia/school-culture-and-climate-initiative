@@ -16,6 +16,22 @@
     }
   }
 
+  &--standard {
+    padding: 60px 20% 110px;
+
+    .page_title {
+      font-family: TitleFontBold;
+      font-size: 60px;
+      color: $page_copy;
+    }
+
+    .page_copy {
+      font-family: BodyFontRegular;
+      font-size: 20px;
+      color: $page_copy;
+    }
+  }
+
   &__logo {
     display: inline-block;
     position: relative;

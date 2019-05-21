@@ -1,0 +1,36 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center; 
+  background-color: $footer_colour;
+  padding: 10px 20px;
+
+  &__college_logo {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+  }
+
+  &__college_name {
+    font-family: BodyFontRegular;
+    color: white;
+    margin: 0;
+  }
+
+  &__social {
+    margin-left: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-column-gap: 5px; 
+    align-items: baseline;
+    justify-self: end;
+  }
+
+  &__social_icon {
+    min-width: 30px;
+    max-height: 36px;
+  }
+
+  &__social_link {
+    text-align: center;
+  }
+}

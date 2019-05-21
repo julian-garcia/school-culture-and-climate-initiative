@@ -1,0 +1,21 @@
+.nav_menu {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center; 
+  border-bottom: 10px solid $accent;
+  padding: 20px 0;
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    justify-content: space-evenly;
+    list-style: none;
+  }
+
+  &__link, a {
+    font-family: BodyFontBold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $menu_text;
+  }
+}
