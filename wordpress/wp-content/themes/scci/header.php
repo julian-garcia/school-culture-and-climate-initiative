@@ -9,7 +9,7 @@
 </head>
 <body class="content">
   <nav class="nav_menu">
-    <img class="logo" src="<?php echo IMAGE_PATH; ?>/logo.svg" alt="The School Culture and Climate Initiative">
+    <a href="/"><img class="logo" src="<?php echo IMAGE_PATH; ?>/logo.svg" alt="The School Culture and Climate Initiative"></a>
 
     <?php 
       wp_nav_menu(
@@ -21,25 +21,4 @@
         )
       );
     ?>
-
-    <!-- <ul class="nav_menu__links" id="nav-menu">
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">About</a>
-      </li>
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">Services</a>
-      </li>
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">Events</a>
-      </li>
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">Resources</a>
-      </li>
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">Contact</a>
-      </li>
-      <li class="nav_menu__item">
-        <a class="nav_menu__link" href="#">Search</a>
-      </li>
-    </ul> -->
   </nav>
