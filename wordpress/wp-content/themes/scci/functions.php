@@ -9,6 +9,8 @@
   }
   add_action('wp_enqueue_scripts', 'load_stylesheet');
 
+  wp_enqueue_script( 'script', get_template_directory_uri() . '/common/scripts/ui.js', array(), 1, true);
+
   // Menu support
   add_theme_support('menus');
 

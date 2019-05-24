@@ -1,19 +1,63 @@
 .nav_menu {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
   align-items: center; 
   border-bottom: 10px solid $accent;
   padding: 20px 0;
 
   &__links {
-    display: grid;
-    grid-template-columns: repeat(6, max-content);
-    justify-content: space-evenly;
+    display: none;
+    grid-template-columns: 1fr;
     list-style: none;
+    padding: 50px 10px 30px;
+    position: absolute;
+    top: -16px;
+    width: 100vw;
+    background-color: white;
+    z-index: 99;
+    box-sizing: border-box;
+
+    &.show {
+      display: grid;
+      @include target-device(tablet-landscape-up) {
+        display: grid;
+      }
+    }
+
+    &.hide {
+      display: none;
+      @include target-device(tablet-landscape-up) {
+        display: grid;
+      }
+    }
+
+    &:before {
+      content: url('../images/times.svg');
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    @include target-device(tablet-landscape-up) {
+      display: grid;
+      position: relative;
+      grid-template-columns: repeat(6, max-content);
+      justify-content: space-evenly;
+      padding: 0;
+      top: 0;
+      width: 100%;
+
+      &:before {
+        display: none;
+      }
+    }
   }
 
   &__link, a {
-    font-family: BodyFontBold;
+    font-family: BodyFontRegular;
+    font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
     color: $menu_text;
@@ -36,16 +80,14 @@
   }
 
   .sub-menu {
-    position: absolute;
-    top: 23px;
+    position: relative;
     left: 0;
-    padding: 10px 10px;
-    margin: 0 0 0 -10px;
+    padding: 0;
+    margin: 0 0 0 20px;
     width: 200px;
-    display: none;
+    display: block;
     list-style: none;
-    background-color: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
     z-index: 99;
 
     &:hover {
@@ -53,11 +95,48 @@
     }
 
     &__item {
-      padding: 5px 0;
+      padding: 0;
 
       &:hover a {
         border-bottom: 1px solid $hover_colour;
       }
+
+      @include target-device(tablet-landscape-up) {
+        padding: 5px 0;
+      }
     }
+
+    @include target-device(tablet-landscape-up) {
+      position: absolute;
+      display: none;
+      top: 21px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: 0 0 0 -10px;
+      padding: 10px 10px;
+      background-color: white;
+    }
+  }
+
+  @include target-device(tablet-landscape-up) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.mobile_nav_bar {
+  height: 50px;
+  background-color: $hover_colour;
+  position: relative;
+
+  &:before {
+    content: url('../images/bars.svg');
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  @include target-device(tablet-landscape-up) {
+    display: none;
   }
 }

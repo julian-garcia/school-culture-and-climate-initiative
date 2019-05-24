@@ -8,6 +8,7 @@
   <?php wp_head(); ?>
 </head>
 <body class="content">
+  <div class="mobile_nav_bar"></div>
   <nav class="nav_menu">
     <a href="/"><img class="logo" src="<?php echo IMAGE_PATH; ?>/logo.svg" alt="The School Culture and Climate Initiative"></a>
 

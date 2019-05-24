@@ -2,8 +2,10 @@
 /wordpress/wp-includes
 /wordpress/wp-content/plugins
 /wordpress/wp-content/*.*
+/wordpress/wp-content/ai1wm-backups
 /wordpress/wp-content/themes/*.*
 /wordpress/wp-content/upgrade
 /wordpress/wp-content/uploads
 /wordpress/wp-content/languages
+/wordpress/wp-snapshots
 /wordpress/*.*

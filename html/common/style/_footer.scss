@@ -1,9 +1,16 @@
 .footer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   align-items: center; 
   background-color: $footer_colour;
   padding: 10px 20px;
+
+  &__college {
+    justify-self: center;
+    @include target-device(tablet-portrait-up) {
+      justify-self: start;
+    }
+  }
 
   &__college_logo {
     border-bottom: 2px solid white;
@@ -14,15 +21,21 @@
     font-family: BodyFontRegular;
     color: white;
     margin: 0;
+    font-size: 12.6px;
   }
 
   &__social {
-    margin-left: 50%;
+    margin-left: 0;
     display: grid;
     grid-template-columns: repeat(4, min-content);
     grid-column-gap: 5px; 
     align-items: baseline;
-    justify-self: end;
+    justify-self: center;
+
+    @include target-device(tablet-portrait-up) {
+      margin-left: 50%;
+      justify-self: end;
+    }
   }
 
   &__social_icon {
@@ -32,5 +45,13 @@
 
   &__social_link {
     text-align: center;
+  }
+
+  .logo {
+    justify-self: center;
+  }
+
+  @include target-device(tablet-portrait-up) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

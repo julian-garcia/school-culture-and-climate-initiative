@@ -15,19 +15,27 @@
   <p class="hero__text"><?php echo $hero['text']; ?></p>
 </div>
 <div class="page_content page_content--home">
-  <div class="page_content__logo">
-    <img class="page_content__image" src="<?php echo IMAGE_PATH; ?>/logo-img-white.svg" alt="">
-    <h2 class="page_content__text page_content__text--1">
-      <span class="page_content__title"><?php echo $logo_titles['logo_title_1']; ?></span>
+  <object type="image/svg+xml" data="<?php echo IMAGE_PATH; ?>/home-buttons.svg" class="logo-img">
+    Your browser does not support SVG
+  </object>
+  <div class="logo_circle logo_circle--1">
+    <h2 class="logo_circle__text">
+      <a class="logo_circle__link" href="#"><?php echo $logo_titles['logo_title_1']; ?></a>
     </h2>
-    <h2 class="page_content__text page_content__text--2">
-      <span class="page_content__title"><?php echo $logo_titles['logo_title_2']; ?></span>
+  </div>
+  <div class="logo_circle logo_circle--2">
+    <h2 class="logo_circle__text">
+      <a class="logo_circle__link" href="#"><?php echo $logo_titles['logo_title_2']; ?></a>
     </h2>
-    <h2 class="page_content__text page_content__text--3">
-      <span class="page_content__title"><?php echo $logo_titles['logo_title_3']; ?></span>
+  </div>
+  <div class="logo_circle logo_circle--3">
+    <h2 class="logo_circle__text">
+      <a class="logo_circle__link" href="#"><?php echo $logo_titles['logo_title_3']; ?></a>
     </h2>
-    <h2 class="page_content__text page_content__text--4">
-      <span class="page_content__title"><?php echo $logo_titles['logo_title_4']; ?></span>
+  </div>
+  <div class="logo_circle logo_circle--4">
+    <h2 class="logo_circle__text">
+      <a class="logo_circle__link" href="#"><?php echo $logo_titles['logo_title_4']; ?></a>
     </h2>
   </div>
 </div>
