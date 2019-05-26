@@ -127,8 +127,7 @@
   background-color: $hover_colour;
   position: relative;
 
-  &:before {
-    content: url('../images/bars.svg');
+  &__img {
     position: absolute;
     top: 5px;
     left: 10px;

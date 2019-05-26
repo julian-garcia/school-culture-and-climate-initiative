@@ -10,18 +10,22 @@
     @include target-device(tablet-portrait-up) {
       justify-self: start;
     }
-  }
 
-  &__college_logo {
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
-  }
+    &_logo {
+      border-bottom: 2px solid white;
+      padding-bottom: 10px;
+    }
 
-  &__college_name {
-    font-family: BodyFontRegular;
-    color: white;
-    margin: 0;
-    font-size: 12.6px;
+    &_name {
+      font-family: BodyFontRegular;
+      color: white;
+      margin: 0;
+      font-size: 12.6px;
+    }
+
+    &_link {
+      text-decoration: none;
+    }
   }
 
   &__social {

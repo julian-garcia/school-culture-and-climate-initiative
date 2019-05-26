@@ -135,7 +135,7 @@
     }
   }
 
-  .staff_section {
+  .split_section {
     display: grid;
     grid-template-columns: 1fr;
 
@@ -148,7 +148,9 @@
     }
     
     &__text {
-      margin: -1.5em 0 0 2em;
+      @include target-device(desktop-up) {
+        margin: -1.5em 0 0 2em;
+      }
     }
   }
 }
