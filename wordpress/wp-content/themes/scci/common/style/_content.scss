@@ -3,11 +3,11 @@
   overflow-x: hidden;
 
   .logo-img {
+    position: relative;
     display: none;
 
     @include target-device(tablet-portrait-up) {
       display: block;
-      position: absolute;
       top: -40px;
       box-sizing: border-box;
       width: 110vw;
@@ -15,7 +15,7 @@
       transform: translateX(-50%);
 
       path {
-        fill:$link_hover_colour;
+        fill: $link_hover_colour;
       }
     }
 
@@ -49,18 +49,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('../images/home/wall.webp'), url('../images/home/wall.jpg');
-    
+    padding-bottom: 50px;
+
     @include target-device(phone-up) {
-      min-height: 110vw;
-      padding: 0 15vw;
+      padding: 0 15vw 30px;
     }
 
     @include target-device(tablet-portrait-up) {
       padding: 0 50px 50px;
-    }
-
-    @include target-device(tablet-landscape-up) {
-      min-height: 90vw;
     }
   }
 
@@ -69,22 +65,36 @@
 
     .page_title {
       font-family: TitleFontBold;
-      font-size: 60px;
+      font-size: 24px;
       color: $page_copy;
       line-height: 1.4em;
+
+      @include target-device(tablet-landscape-up) {
+        font-size: 60px;
+      }
     }
 
     .page_subheading {
       font-family: TitleFontRegular;
-      font-size: 30px;
+      font-size: 22px;
       color: $page_copy;
       line-height: 1.4em;
       margin: 60px 0 45px;
+
+      @include target-device(tablet-landscape-up) {
+        font-size: 30px;
+      }
     }
 
     .bold-text {
       font-family: BodyFontBold;
       clear: both;
+    }
+
+    .text_link {
+      color: $link_hover_colour;
+      text-decoration: none;
+      line-height: 32px;
     }
 
     .page_copy, p {
@@ -99,6 +109,24 @@
       display: block;
       max-width: 95vw;
       height: auto;
+    }
+
+    .resources_section {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 20px;
+
+      .page_subheading {
+        margin: 0 0 60px;
+      }
+
+      @include target-device(tablet-portrait-up) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include target-device(tablet-landscape-up) {
+        margin: 0 -50px;
+      }
     }
 
     ul {

@@ -46,6 +46,12 @@
           'block' => 'p',  
           'classes' => 'bold-text',
           'wrapper' => false,
+        ),  
+        array(  
+          'title' => 'Link',  
+          'block' => 'a',  
+          'classes' => 'text_link',
+          'wrapper' => false,
         ),
     );  
     $init_array['style_formats'] = json_encode( $style_formats );  

@@ -21,6 +21,19 @@
 
     &--page {
       background-image: url('../images/pages/wall.webp'), url('../images/pages/wall.jpg');
+      min-height: 90px;
+
+      @include target-device(phone-up) {
+        min-height: 170px;
+      }
+
+      @include target-device(tablet-portrait-up) {
+        min-height: 200px;
+      }
+  
+      @include target-device(tablet-landscape-up) {
+        min-height: 300px;
+      }
     }
   }
 
@@ -31,15 +44,24 @@
     top: 50%;
     transform: translateY(-50%);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
+    text-align: left;
     font-weight: 800;
-    font-size: 70px;
-    line-height: 70px;
-    margin: 0;
-    width: 100%;
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0 0 0 2%;
+    width: 98%;
+
+    @include target-device(phone-up) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @include target-device(tablet-portrait-up) {
+      font-size: 70px;
+      line-height: 70px;
+    }
 
     @include target-device(tablet-landscape-up) {
-      font-size: 110px;
       line-height: 90px;
       margin: 0 0 0 30px;
       text-align: left;
@@ -47,6 +69,7 @@
     }
     
     @include target-device(desktop-up) {
+      font-size: 110px;
       margin: 0 0 0 100px;
       width: calc(100% - 100px);
     }

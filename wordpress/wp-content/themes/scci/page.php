@@ -2,6 +2,8 @@
   get_header(); 
   $the_post = the_post();
   $page_items = get_field('page_items'); 
+  $resources = get_field('resources_column'); 
+  $organizations = get_field('organizations_column'); 
 ?>
 <?php if ($page_items['image']): ?>
 <style>
@@ -16,7 +18,19 @@
   </div>
 </div>
 <div class="page_content page_content--standard">
-  <h2 class="page_title"><?php echo $page_items['title']; ?></h2>
+  <?php if ($page_items['title']): ?>
+    <h2 class="page_title"><?php echo $page_items['title']; ?></h2>
+  <?php endif ?>
+    <?php if ($resources): ?>
+      <div class="resources_section">
+        <div>
+          <?php echo $resources; ?>
+        </div>
+        <div>
+          <?php echo $organizations; ?>
+        </div>
+      </div>
+    <?php endif ?>
     <?php
       echo the_content();
       if( have_rows('staff_section') ): ?>

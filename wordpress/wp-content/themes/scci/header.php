@@ -8,8 +8,16 @@
   <?php wp_head(); ?>
 </head>
 <body class="content">
+  <div class="signin_bar">
+    <span class="signin_bar__text">SUPPORTING, CONNECTING, AND EMPOWERING SCHOOLS</span>
+    <a href="#" class="signin_bar__login">
+      <img class="signin_bar__icon" src="<?php echo IMAGE_PATH; ?>/sign-in.svg" alt="Sign In">
+      Sign In
+    </a>
+  </div>
   <div class="mobile_nav_bar">
     <img class="mobile_nav_bar__img" src="<?php echo IMAGE_PATH; ?>/bars.svg" alt="">
+    <a href="#"><img class="mobile_nav_bar__signin" src="<?php echo IMAGE_PATH; ?>/sign-in.svg" alt="Sign In"></a>
   </div>
   <nav class="nav_menu">
     <a href="/"><img class="logo" src="<?php echo IMAGE_PATH; ?>/logo.svg" alt="The School Culture and Climate Initiative"></a>

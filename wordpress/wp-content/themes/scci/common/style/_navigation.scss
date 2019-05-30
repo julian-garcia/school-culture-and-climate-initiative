@@ -135,7 +135,55 @@
     cursor: pointer;
   }
 
+  &__signin {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 40px;
+    cursor: pointer;
+  }
+
   @include target-device(tablet-landscape-up) {
     display: none;
+  }
+}
+
+.signin_bar {
+  display: none;
+  height: 30px;
+  width: 100vw;
+  background-color: $hover_colour;
+  position: relative;
+  padding: 0;
+
+  &__text, &__login, &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__text {
+    left: 4%;
+    color: white;
+    font-family: BodyFontBold;
+    font-size: 14px;
+    line-height: 1.4em;
+  }
+
+  &__login {
+    right: 4%;
+    color: white;
+    font-family: BodyFontBold;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    left: -30px;
+    width: 20px;
+  }
+
+  @include target-device(tablet-landscape-up) {
+    display: block;
   }
 }

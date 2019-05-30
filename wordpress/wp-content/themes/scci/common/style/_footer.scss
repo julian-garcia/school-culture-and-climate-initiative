@@ -1,9 +1,10 @@
 .footer {
   display: grid;
   grid-template-columns: 1fr;
+  row-gap: 30px;
   align-items: center; 
   background-color: $footer_colour;
-  padding: 10px 20px;
+  padding: 50px 60px;
 
   &__college {
     justify-self: center;
@@ -57,5 +58,9 @@
 
   @include target-device(tablet-portrait-up) {
     grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include target-device(tablet-landscape-up) {
+    padding: 50px 120px;
   }
 }
