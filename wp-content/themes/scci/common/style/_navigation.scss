@@ -40,6 +40,18 @@
       cursor: pointer;
     }
 
+    .menu-item {
+      margin: 10px 0;
+
+      & > a.active {
+        border-bottom: 1px solid $hover_colour;
+      }
+
+      @include target-device(tablet-landscape-up) {
+        margin: 0;
+      }
+    }
+
     @include target-device(tablet-landscape-up) {
       display: grid;
       position: relative;
@@ -75,6 +87,14 @@
 
       & .sub-menu {
         display: block;
+      }
+    }
+
+    & > a {
+      font-family: BodyFontBold;
+
+      @include target-device(tablet-landscape-up) {
+        font-family: BodyFontRegular;
       }
     }
   }

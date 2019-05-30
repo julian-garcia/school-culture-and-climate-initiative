@@ -91,7 +91,7 @@
       clear: both;
     }
 
-    .text_link {
+    .text_link, a {
       color: $link_hover_colour;
       text-decoration: none;
       line-height: 32px;
@@ -231,6 +231,7 @@
   .split_section {
     display: grid;
     grid-template-columns: 1fr;
+    margin-bottom: 40px;
 
     @include target-device(desktop-up) {
       grid-template-columns: 1fr 4fr;
@@ -238,6 +239,7 @@
 
     &__image {
       margin: 0 auto 20px;
+      width: 200px;
     }
     
     &__text {

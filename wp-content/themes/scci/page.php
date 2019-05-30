@@ -35,26 +35,34 @@
       echo the_content();
       if( have_rows('staff_section') ): ?>
       <h2 class="page_title">Staff</h2>
-      <div class="split_section">
-        <?php while ( have_rows('staff_section') ) : the_row(); ?>
-          <img class="split_section__image" src="<?php the_sub_field('staff_image'); ?>" alt="Member of staff">
+      <?php 
+        while ( have_rows('staff_section') ) : the_row(); 
+        $staff_image = get_sub_field('staff_image');  ?>
+        <div class="split_section">
+          <img class="split_section__image" 
+            src="<?php echo $staff_image['url']; ?>"
+            alt="<?php echo $staff_image['alt']; ?>">
           <div class="split_section__text">
             <?php the_sub_field('staff_description'); ?>
           </div>
-        <?php endwhile; ?>
-      </div>
+        </div>
+      <?php endwhile; ?>
     <?php else : endif; ?>
     <?php
       if( have_rows('consultants_section') ): ?>
       <h2 class="page_title">Consultants</h2>
-      <div class="split_section">
-        <?php while ( have_rows('consultants_section') ) : the_row(); ?>
-          <img class="split_section__image" src="<?php the_sub_field('consultants_image'); ?>" alt="Consultant">
+      <?php 
+        while ( have_rows('consultants_section') ) : the_row(); 
+        $consultant_image = get_sub_field('consultants_image'); ?>
+        <div class="split_section">
+          <img class="split_section__image" 
+            src="<?php echo $consultant_image['url']; ?>"
+            alt="<?php echo $consultant_image['alt']; ?>">
           <div class="split_section__text">
             <?php the_sub_field('consultants_description') ?>
           </div>
-        <?php endwhile; ?>
-      </div>
+        </div>
+      <?php endwhile; ?>
     <?php else : endif; ?>
 </div>
 <?php get_footer(); ?>

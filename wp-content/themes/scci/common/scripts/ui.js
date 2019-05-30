@@ -1,5 +1,7 @@
 var mobileNavElement = document.querySelector('.mobile_nav_bar'),
     navMenuLinksElement = document.querySelector('.nav_menu__links'),
+    allNavLinks = document.querySelectorAll('.nav_menu__item > a'),
+    allNavSubLinks = document.querySelectorAll('.sub-menu__item > a'),
     sliderElement = document.querySelector('.slider'),
     allSlides = document.querySelectorAll('.slider__slide'),
     sliderBullets = document.querySelectorAll('.slider__bullet'),
@@ -89,3 +91,21 @@ if (sliderBulletsContainer) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  allNavLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.href == window.location.href) {
+      link.classList.add('active');
+      console.log(link.href, window.location.href);
+    }
+  });
+
+  allNavSubLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.href == window.location.href) {
+      link.classList.add('active');
+      link.parentElement.parentElement.previousElementSibling.classList.add('active');
+    }
+  });
+});
