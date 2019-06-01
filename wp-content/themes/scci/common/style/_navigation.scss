@@ -4,6 +4,10 @@
   align-items: center; 
   border-bottom: 10px solid $accent;
   padding: 20px 0;
+  
+  .logo {
+    max-width: 100%;
+  }
 
   &__links {
     display: none;
@@ -52,10 +56,41 @@
       }
     }
 
+    .search_form {
+      margin-left: 20px;
+
+      &:before {
+        content: url('../images/icons/search.svg');
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        cursor: default;
+      }
+
+      &__input {
+        font-family: BodyFontRegular;
+        font-size: 14px;
+        line-height: 14px;
+        border: 1px solid $input_border;
+        border-radius: 5px;
+        position: relative;
+        max-width: 150px;
+        padding: 5px;
+        margin-top: -5px;
+
+        &::placeholder {
+          text-transform: uppercase;
+          color: $menu_text;
+        }
+      }
+    }
+
     @include target-device(tablet-landscape-up) {
       display: grid;
       position: relative;
-      grid-template-columns: repeat(6, max-content);
+      grid-template-columns: repeat(7, max-content);
       justify-content: space-evenly;
       padding: 0;
       top: 0;
@@ -73,6 +108,30 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $menu_text;
+  }
+
+  &__home {
+    background-image: url('../images/icons/home.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      background-image: url('../images/icons/home-hover.svg');
+    }
+
+    &.active {
+      background-image: url('../images/icons/home-hover.svg');
+      border-bottom: 1px solid $hover_colour;
+    }
+
+    a {
+      font-size: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__item {
@@ -96,6 +155,26 @@
       @include target-device(tablet-landscape-up) {
         font-family: BodyFontRegular;
       }
+    }
+  }
+
+  &__search {
+    display: none;
+  }
+
+  .show_search {
+    a {
+      margin-left: 20px;
+    }
+
+    &:before {
+      content: url('../images/icons/search.svg');
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
     }
   }
 

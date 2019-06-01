@@ -1,14 +1,14 @@
 .footer {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 30px;
+  row-gap: 50px;
   align-items: center; 
   background-color: $footer_colour;
-  padding: 50px 60px;
+  padding: 20px 30px;
 
   &__college {
     justify-self: center;
-    @include target-device(tablet-portrait-up) {
+    @include target-device(tablet-landscape-up) {
       justify-self: start;
     }
 
@@ -29,38 +29,62 @@
     }
   }
 
-  &__social {
+  &_social {
     margin-left: 0;
     display: grid;
-    grid-template-columns: repeat(4, min-content);
+    grid-template-columns: min-content 80px;
     grid-column-gap: 5px; 
-    align-items: baseline;
+    align-items: flex-start;
     justify-self: center;
 
-    @include target-device(tablet-portrait-up) {
-      margin-left: 50%;
+    &__icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+    }
+  
+    &__link {
+      text-align: center;
+      font-size: 0;
+    }
+
+    &__site_link {
+      font-family: BodyFontRegular;
+      color: white;
+      margin: 0;
+      font-size: 12.6px;
+      line-height: 2.2em;
+      text-decoration: none;
+    }
+
+    @include target-device(tablet-landscape-up) {
       justify-self: end;
     }
   }
 
-  &__social_icon {
-    min-width: 30px;
-    max-height: 36px;
-  }
-
-  &__social_link {
-    text-align: center;
-  }
-
-  .logo {
+  &__logo {
     justify-self: center;
-  }
 
-  @include target-device(tablet-portrait-up) {
-    grid-template-columns: repeat(3, 1fr);
+    .logo {
+      justify-self: center;
+      max-width: calc(100vw - 60px);
+    }
+
+    &_address {
+      font-family: BodyFontRegular;
+      color: white;
+      margin: 0;
+      font-size: 12.6px;
+      text-align: center;
+    }
   }
   
   @include target-device(tablet-landscape-up) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 80px;
+  }
+
+  @include target-device(desktop-up) {
     padding: 50px 120px;
   }
 }

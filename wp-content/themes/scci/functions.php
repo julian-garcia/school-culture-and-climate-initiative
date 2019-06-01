@@ -11,8 +11,9 @@
 
   wp_enqueue_script( 'script', get_template_directory_uri() . '/common/scripts/ui.js', array(), 1, true);
 
-  // Menu support
+  // Add menu support to the theme 
   add_theme_support('menus');
+  add_theme_support('html5', array('search-form'));
 
   register_nav_menus(
     array(
@@ -20,6 +21,13 @@
     )
   );
 
+  // Append a site search box to the end of the menu
+  function add_search_form( $items, $args ) {
+    $items .= '<li class="nav_menu__item nav_menu__search">' . get_search_form( false ) . '</li>';
+    return $items;
+  }
+
+  add_filter( 'wp_nav_menu_items','add_search_form', 10, 2 );
 
   function add_style_select_buttons( $buttons ) {
     array_unshift( $buttons, 'styleselect' );
@@ -27,32 +35,33 @@
   }
   add_filter( 'mce_buttons_2', 'add_style_select_buttons' );
 
+  // Custom formats used to apply custom css classes to page content
   function insert_formats( $init_array ) {  
     $style_formats = array(  
-        array(  
-            'title' => 'Page Title',  
-            'block' => 'h2',  
-            'classes' => 'page_title',
-            'wrapper' => false,
-        ),  
-        array(  
-          'title' => 'Subheading',  
-          'block' => 'h3',  
-          'classes' => 'page_subheading',
-          'wrapper' => false,
-        ),  
-        array(  
-          'title' => 'Bold',  
-          'block' => 'p',  
-          'classes' => 'bold-text',
-          'wrapper' => false,
-        ),  
-        array(  
-          'title' => 'Link',  
-          'block' => 'a',  
-          'classes' => 'text_link',
-          'wrapper' => false,
-        ),
+      array(  
+        'title' => 'Page Title',  
+        'block' => 'h2',  
+        'classes' => 'page_title',
+        'wrapper' => false,
+      ),  
+      array(  
+        'title' => 'Subheading',  
+        'block' => 'h3',  
+        'classes' => 'page_subheading',
+        'wrapper' => false,
+      ),  
+      array(  
+        'title' => 'Bold',  
+        'block' => 'p',  
+        'classes' => 'bold-text',
+        'wrapper' => false,
+      ),  
+      array(  
+        'title' => 'Link',  
+        'block' => 'a',  
+        'classes' => 'text_link',
+        'wrapper' => false,
+      ),
     );  
     $init_array['style_formats'] = json_encode( $style_formats );  
       

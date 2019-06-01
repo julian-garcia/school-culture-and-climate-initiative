@@ -1,5 +1,7 @@
 var mobileNavElement = document.querySelector('.mobile_nav_bar'),
     navMenuLinksElement = document.querySelector('.nav_menu__links'),
+    navHomeItem = document.querySelector('.nav_menu__home'),
+    navHomeLink = document.querySelector('.nav_menu__home > a'),
     allNavLinks = document.querySelectorAll('.nav_menu__item > a'),
     allNavSubLinks = document.querySelectorAll('.sub-menu__item > a'),
     sliderElement = document.querySelector('.slider'),
@@ -20,6 +22,26 @@ navMenuLinksElement.addEventListener('click', function(e) {
   if(e.target.classList.contains('nav_menu__links')) {
     navMenuLinksElement.classList.remove('show');
     navMenuLinksElement.classList.add('hide');
+  }
+
+  // Replace the search menu item with a search box within the nav menu
+
+  if(e.target.classList.contains('show_search')) {
+    e.preventDefault();
+    e.target.classList.add('nav_menu__search');
+    e.target.nextElementSibling.classList.remove('nav_menu__search');
+    var searchInput = e.target.nextElementSibling.querySelector('.search_form__input');
+    searchInput.focus();
+    searchInput.select();
+  }
+
+  if(e.target.parentElement.classList.contains('show_search')) {
+    e.preventDefault();
+    e.target.parentElement.classList.add('nav_menu__search');
+    e.target.parentElement.nextElementSibling.classList.remove('nav_menu__search');
+    var searchInput = e.target.parentElement.nextElementSibling.querySelector('.search_form__input');
+    searchInput.focus();
+    searchInput.select();
   }
 });
 
@@ -92,12 +114,19 @@ if (sliderBulletsContainer) {
   });
 }
 
+// Highlight the currently active page on page load
 document.addEventListener('DOMContentLoaded', function() {
+  showSearchForm.classList.remove('nav_menu__search');
+
+  navHomeItem.classList.remove('active');
+  if (navHomeLink.href == window.location.href) {
+    navHomeItem.classList.add('active');
+  }
+
   allNavLinks.forEach(function(link) {
     link.classList.remove('active');
     if (link.href == window.location.href) {
       link.classList.add('active');
-      console.log(link.href, window.location.href);
     }
   });
 
