@@ -11,12 +11,12 @@
     </div>
     <div class="footer_social">
       <div class="footer_social__site_map">
-        <a class="footer_social__site_link" href="#">Home</a> 
-        <a class="footer_social__site_link" href="#">About</a> 
-        <a class="footer_social__site_link" href="#">Services</a> 
+        <a class="footer_social__site_link" href="/">Home</a> 
+        <a class="footer_social__site_link" href="/about/our-story">About</a> 
+        <a class="footer_social__site_link" href="/services/assessment-and-improvement/">Services</a> 
         <a class="footer_social__site_link" href="#">Events</a> 
-        <a class="footer_social__site_link" href="#">Resources</a> 
-        <a class="footer_social__site_link" href="#">Contact</a> 
+        <a class="footer_social__site_link" href="/resources">Resources</a> 
+        <a class="footer_social__site_link" href="/contact-us">Contact</a> 
       </div>
       <div>
         <a class="footer_social__site_link" href="#">Sign in</a> 

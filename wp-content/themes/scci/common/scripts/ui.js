@@ -7,7 +7,8 @@ var mobileNavElement = document.querySelector('.mobile_nav_bar'),
     sliderElement = document.querySelector('.slider'),
     allSlides = document.querySelectorAll('.slider__slide'),
     sliderBullets = document.querySelectorAll('.slider__bullet'),
-    sliderBulletsContainer = document.querySelector('.slider__bullets');
+    sliderBulletsContainer = document.querySelector('.slider__bullets'),
+    showSearchForm = document.querySelector('.nav_menu__search');
 
 if (mobileNavElement) {
   mobileNavElement.addEventListener('click', function(e) {
@@ -116,8 +117,6 @@ if (sliderBulletsContainer) {
 
 // Highlight the currently active page on page load
 document.addEventListener('DOMContentLoaded', function() {
-  showSearchForm.classList.remove('nav_menu__search');
-
   navHomeItem.classList.remove('active');
   if (navHomeLink.href == window.location.href) {
     navHomeItem.classList.add('active');
