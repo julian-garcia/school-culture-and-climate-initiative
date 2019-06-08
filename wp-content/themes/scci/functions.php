@@ -95,9 +95,14 @@
   add_action( 'init', 'create_posttype' );
 
   function upload_file() {
-    $target_file = wp_upload_dir()['basedir'] . "/user_uploads/" . 
-                   wp_get_current_user()->user_login . '/' . 
+    $uploads_dir = wp_upload_dir()['basedir'] . "/user_uploads/" . 
+                   wp_get_current_user()->user_login;
+    $target_file = $uploads_dir . '/' . 
                    basename($_FILES['fileToUpload']['name']);
+
+    if (!is_dir($uploads_dir)) {
+      wp_mkdir_p( $uploads_dir );
+    }
 
     move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file);
     header("Location:/my-resources");

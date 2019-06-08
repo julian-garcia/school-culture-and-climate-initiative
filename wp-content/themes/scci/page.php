@@ -102,6 +102,7 @@
           <a href="/wp-login.php">Log in</a> or 
           <?php wp_register('', ''); ?>
         </h2>
+        <h3 class="page_subheading">If you have just registered, please check your email and go to the link to set up your password.</h3>
       <?php endif; ?>
     <?php endif; ?>
 </div>
