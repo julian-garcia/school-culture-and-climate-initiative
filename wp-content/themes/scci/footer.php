@@ -6,15 +6,15 @@
       </a>
     </div>
     <div class="footer__logo">
-      <img class="logo" src="<?php echo IMAGE_PATH; ?>/logo-white.svg" alt="The School Culture and Climate Initiative">
-      <p class="footer__logo_address">Address 1, Address 2, Zip code</p>
+      <a href="/"><img class="logo" src="<?php echo IMAGE_PATH; ?>/logo-white.svg" alt="The School Culture and Climate Initiative"></a>
+      <p class="footer__logo_address">College of Saint Elizabeth, Morristown NJ 07960</p>
     </div>
     <div class="footer_social">
       <div class="footer_social__site_map">
         <a class="footer_social__site_link" href="/">Home</a> 
         <a class="footer_social__site_link" href="/about/our-story">About</a> 
         <a class="footer_social__site_link" href="/services/assessment-and-improvement/">Services</a> 
-        <a class="footer_social__site_link" href="#">Events</a> 
+        <a class="footer_social__site_link" href="/events">Events</a> 
         <a class="footer_social__site_link" href="/resources">Resources</a> 
         <a class="footer_social__site_link" href="/contact-us">Contact</a> 
       </div>
