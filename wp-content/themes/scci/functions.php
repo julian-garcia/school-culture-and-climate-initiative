@@ -138,10 +138,20 @@
   add_filter( 'login_redirect', 'login_redirect', 10, 3 );
   add_filter( 'registration_redirect', 'login_redirect' );
 
-  //Allow Contributors to Add Media
+  // Allow Contributors to Add Media
   function allow_subscriber_media( ) {
     if(!current_user_can('subscriber') || current_user_can('upload_files')) return;
     $subscriber = get_role('subscriber');
     $subscriber->add_cap('upload_files');
   } 
   add_action('admin_init', 'allow_subscriber_media');
+
+  add_action('after_setup_theme', 'remove_admin_bar');
+
+  // Disable Admin Bar for All Users Except for Administrators
+  function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+      show_admin_bar(false);
+    }
+  }
+  add_action('after_setup_theme', 'remove_admin_bar');
