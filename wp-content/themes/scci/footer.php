@@ -19,8 +19,8 @@
         <a class="footer_social__site_link" href="/contact-us">Contact</a> 
       </div>
       <div>
-        <a class="footer_social__site_link" href="#">Sign in</a> 
-        <a class="footer_social__site_link" href="#">Search</a> <br>
+        <a class="footer_social__site_link" href="/my-resources">Sign in</a> 
+        <a class="footer_social__site_link" href="/">Search</a> <br>
         <a href="#" class="footer_social__link">
           <img class="footer_social__icon" src="<?php echo IMAGE_PATH; ?>/icons/envelope.svg" alt="Email">
         </a>
